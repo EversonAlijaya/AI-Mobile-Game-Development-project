@@ -25,7 +25,7 @@ public class playercontroller : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
+        if Input.GetKey(KeyCode.Space) && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
