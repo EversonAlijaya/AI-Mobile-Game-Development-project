@@ -5042,12 +5042,12 @@ MonoBehaviour:
     xMax: 6
     zMin: -20
     zMax: 20
-  tilt: 15
-  dodge: 10
+  tilt: 10
+  dodge: 8
   smoothing: 7.5
   startWait: {x: 0.5, y: 1}
-  maneuverTime: {x: 1, y: 2}
-  maneuverWait: {x: 1, y: 2}
+  maneuverTime: {x: 1.5, y: 3}
+  maneuverWait: {x: 1.5, y: 3}
 --- !u!1 &5843751262477216150
 GameObject:
   m_ObjectHideFlags: 0

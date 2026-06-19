@@ -100,7 +100,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6143533472435891725}
-  - component: {fileID: 7191088777282065302}
   - component: {fileID: -6189023414316420005}
   - component: {fileID: -1861309077452787951}
   - component: {fileID: 1157233664238702037}
@@ -109,7 +108,7 @@ GameObject:
   - component: {fileID: 833881623052998740}
   m_Layer: 0
   m_Name: Boss ENEMY
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,19 +131,6 @@ Transform:
   - {fileID: 5136576102932610278}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7191088777282065302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102386709213788108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b766eb8e12424636a6966e49b671da7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Mover
-  speed: -0.001
 --- !u!54 &-6189023414316420005
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -226,12 +212,12 @@ MonoBehaviour:
     xMax: 6
     zMin: -20
     zMax: 20
-  tilt: 15
-  dodge: 10
-  smoothing: 7.5
+  tilt: 10
+  dodge: 4
+  smoothing: 4
   startWait: {x: 0.5, y: 1}
-  maneuverTime: {x: 1, y: 2}
-  maneuverWait: {x: 1, y: 2}
+  maneuverTime: {x: 1.5, y: 3}
+  maneuverWait: {x: 2, y: 4}
 --- !u!114 &-5545686742533843241
 MonoBehaviour:
   m_ObjectHideFlags: 0

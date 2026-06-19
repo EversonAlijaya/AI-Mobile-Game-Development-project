@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
+        bossWarningText.text = "";
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
