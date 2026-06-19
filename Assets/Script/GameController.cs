@@ -11,10 +11,15 @@ public class GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public GameObject bossPrefab;
+    public int bossScoreThreshold = 100;
+    private bool bossTriggered;
+
 
     public TMP_Text scoreText;
     public TMP_Text restartText;
     public TMP_Text gameOverText;
+    public TMP_Text bossWarningText;
 
     private bool gameOver;
     private bool restart;
@@ -62,8 +67,15 @@ public class GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
 
-            spawnWait = Mathf.Max(0.1f, spawnWait - 0.05f);
+            spawnWait = Mathf.Max(0.1f, spawnWait - 0.1f);
             waveWait = Mathf.Max(1f, waveWait - 0.3f);
+
+            if (score >= bossScoreThreshold && !bossTriggered)
+            {
+                bossTriggered = true;
+                StartCoroutine(BossSequence());
+                break;
+            }
 
             if (gameOver)
             {
@@ -73,7 +85,15 @@ public class GameController : MonoBehaviour
             }
         }
     }
+    private IEnumerator BossSequence()
+    {
+        bossWarningText.text = "BOSS INCOMING";
+        yield return new WaitForSeconds(3f);
+        bossWarningText.text = "";
 
+        Vector3 bossSpawnPosition = new Vector3(0, spawnValues.y, spawnValues.z);
+        Instantiate(bossPrefab, bossSpawnPosition, Quaternion.identity);
+    }
     public void AddScore(int newScoreValue)
     {
         score += newScoreValue;
