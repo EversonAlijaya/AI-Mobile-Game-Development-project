@@ -62,6 +62,9 @@ public class GameController : MonoBehaviour
             }
             yield return new WaitForSeconds(waveWait);
 
+            spawnWait = Mathf.Max(0.1f, spawnWait - 0.05f);
+            waveWait = Mathf.Max(1f, waveWait - 0.3f);
+
             if (gameOver)
             {
                 restartText.text = "Press 'R' for Restart";
