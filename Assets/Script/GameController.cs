@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public float startWait;
     public float waveWait;
     public GameObject bossPrefab;
+    public float bossSpawnZ = 10f;
     public int bossScoreThreshold = 100;
     private bool bossTriggered;
 
@@ -92,7 +93,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(3f);
         bossWarningText.text = "";
 
-        Vector3 bossSpawnPosition = new Vector3(0, spawnValues.y, spawnValues.z);
+        Vector3 bossSpawnPosition = new Vector3(0, spawnValues.y, bossSpawnZ);
         Instantiate(bossPrefab, bossSpawnPosition, Quaternion.identity);
     }
     public void AddScore(int newScoreValue)

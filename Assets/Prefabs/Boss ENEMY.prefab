@@ -102,10 +102,10 @@ GameObject:
   - component: {fileID: 6143533472435891725}
   - component: {fileID: -6189023414316420005}
   - component: {fileID: -1861309077452787951}
-  - component: {fileID: 1157233664238702037}
   - component: {fileID: 4452662824151698333}
   - component: {fileID: -5545686742533843241}
   - component: {fileID: 833881623052998740}
+  - component: {fileID: 3349035942685542739}
   m_Layer: 0
   m_Name: Boss ENEMY
   m_TagString: Enemy
@@ -179,22 +179,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.85
   m_Center: {x: 0, y: 0, z: -0.3}
---- !u!114 &1157233664238702037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102386709213788108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cad73bace5a4c43aa910b3cba34b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DestroyByContact
-  explosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 3}
-  playerExplosion: {fileID: 100008, guid: 3455fe69f7ddc4604b95bf9b0a1e88d7, type: 3}
-  scoreValue: 100
-  ignoreTag: Enemy
 --- !u!114 &4452662824151698333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +315,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3349035942685542739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102386709213788108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ab5ff9cace64ac1bb4506284d31b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossHealth
+  maxHealth: 25
+  scoreValue: 200
+  explosion: {fileID: 100012, guid: 160925a6fe2664f2a978566b819f0af0, type: 3}
+  healthBar: {fileID: 0}
 --- !u!1 &4490788296967719556
 GameObject:
   m_ObjectHideFlags: 0
